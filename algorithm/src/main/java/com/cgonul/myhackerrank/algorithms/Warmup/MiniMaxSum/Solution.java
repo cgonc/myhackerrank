@@ -1,4 +1,4 @@
-package com.cgonul.myhackerrank.algorithms.minimaxsum;
+package com.cgonul.myhackerrank.algorithms.Warmup.MiniMaxSum;
 
 import java.util.Scanner;
 
