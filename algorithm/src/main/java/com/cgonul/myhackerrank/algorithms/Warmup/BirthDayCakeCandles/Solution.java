@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class Solution {
 
-	static int birthdayCakeCandles(int n, int[] ar) {
+	private static int birthdayCakeCandles(int n, int[] ar) {
 		Stack<Integer> sortedLocalMaximums = new Stack<>();
 		sortedLocalMaximums.push(0);
 		for(int height : ar){

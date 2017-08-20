@@ -30,11 +30,6 @@ public class Solution {
 			}
 		}
 
-		//		Stream<Integer> reverseOrderStream = IntStream.of(arr).boxed().sorted(Comparator.reverseOrder());
-		//		Stream<Integer> naturalOrderStream = IntStream.of(arr).boxed().sorted(Comparator.naturalOrder());
-		//
-		//		long max = reverseOrderStream.limit(4).mapToInt(Integer::intValue).sum();
-		//		long min = naturalOrderStream.limit(4).mapToInt(Integer::intValue).sum();
 
 		System.out.printf("%d %d%n", max, min);
 	}

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Solution {
 
-	static String timeConversion(String s) {
+	private static String timeConversion(String s) {
 		if(s.contains("PM")){
 			s = s.replace("PM","");
 			String[] split = s.split(":");
