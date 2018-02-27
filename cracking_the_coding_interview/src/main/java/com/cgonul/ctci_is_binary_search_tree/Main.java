@@ -15,12 +15,21 @@ public class Main {
 		System.out.println(checkBST(node004));
 	}
 
+	private static boolean constraints(int data) {
+		return data >= 0 && data <= 10000;
+	}
+
 	private static boolean checkBST(Node root) {
 		if(root.left != null && root.right != null){
-			return root.left.data < root.right.data && checkBST(root.left) && checkBST(root.right);
+			return constraints(root.left.data)
+					&& constraints(root.right.data)
+					&& root.data > root.left.data
+					&& root.data < root.right.data
+					&& checkBST(root.left)
+					&& checkBST(root.right);
 		} else if(root.left == null && root.right != null){
 			return false;
-		} else if(root.left != null && root.right == null){
+		} else if(root.left != null){
 			return false;
 		} else {
 			return true;
