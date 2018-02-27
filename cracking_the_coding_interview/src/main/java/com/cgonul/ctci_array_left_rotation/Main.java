@@ -1,10 +1,10 @@
-package com.cgonul;
+package com.cgonul.ctci_array_left_rotation;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ArraysLeftRotation {
+public class Main {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
