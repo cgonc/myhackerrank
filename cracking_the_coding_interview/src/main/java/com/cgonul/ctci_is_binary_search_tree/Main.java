@@ -22,46 +22,7 @@ public class Main {
 		Node node006 = new Node(6, node003, node007);
 		Node node004 = new Node(4, node002, node006);
 
-		System.out.println(checkBST(node004));
-	}
-
-	private static boolean constraints(int data) {
-		return data < 0 || data > 10000;
-	}
-
-	private static boolean checkBSTHelper(Node root, int rootData) {
-		if(root == null){
-			return true;
-		}
-
-		if(constraints(root.data)){
-			return false;
-		}
-
-		if(root.left != null && root.data < root.left.data){
-			return false;
-		}
-
-		if(root.right != null && root.data > root.right.data){
-			return false;
-		}
-
-		if(root.left != null && root.left.data > rootData){
-			return false;
-		}
-
-		if(root.right != null && root.right.data < rootData){
-			return false;
-		}
-
-		return checkBSTHelper(root.left, rootData) && checkBSTHelper(root.right, rootData);
-	}
-
-	private static boolean checkBST(Node root) {
-		if(root == null){
-			return true;
-		}
-		return checkBSTHelper(root, root.data);
+		System.out.println(node004.checkBST(node004));
 	}
 }
 
