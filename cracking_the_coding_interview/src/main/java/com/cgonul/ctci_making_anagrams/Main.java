@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static Map<Character, Integer> calculateFrequnencyMap(String aString) {
+	private static Map<Character, Integer> calculateFrequnencyMap(String aString) {
 		Map<Character, Integer> result = new HashMap<>();
 		for(Character c : aString.toCharArray()){
 			if(result.containsKey(c)){
@@ -20,39 +20,33 @@ public class Main {
 		return result;
 	}
 
-	public static int getNumberOfDeletions(Map<Character, Integer> firstFrequencyMap, Map<Character, Integer> secondFrequencyMap) {
+	private static int getNumberOfDeletions(Map<Character, Integer> firstFrequencyMap, Map<Character, Integer> secondFrequencyMap) {
 		int numberOfDeletions = 0;
 		for(Character firstKey : firstFrequencyMap.keySet()){
 			if(secondFrequencyMap.containsKey(firstKey)){
 				int firstFrequency = firstFrequencyMap.get(firstKey);
 				int secondFrequency = secondFrequencyMap.get(firstKey);
 				numberOfDeletions += Math.abs(firstFrequency - secondFrequency);
-				firstFrequencyMap.put(firstKey,0);
-				secondFrequencyMap.put(firstKey,0);
+				firstFrequencyMap.put(firstKey, 0);
+				secondFrequencyMap.put(firstKey, 0);
 			} else {
 				numberOfDeletions += firstFrequencyMap.get(firstKey);
-				firstFrequencyMap.put(firstKey,0);
+				firstFrequencyMap.put(firstKey, 0);
 			}
 		}
 		return numberOfDeletions;
 	}
 
-	public static int numberNeeded(String first, String second) {
+	private static int numberNeeded(String first, String second) {
 		Map<Character, Integer> firstFrequencyMap = calculateFrequnencyMap(first);
 		Map<Character, Integer> secondFrequencyMap = calculateFrequnencyMap(second);
-
-		int numberOfDeletions = 0;
-		numberOfDeletions = getNumberOfDeletions(firstFrequencyMap, secondFrequencyMap) + getNumberOfDeletions(secondFrequencyMap, firstFrequencyMap);
-
-		return numberOfDeletions;
+		return getNumberOfDeletions(firstFrequencyMap, secondFrequencyMap) + getNumberOfDeletions(secondFrequencyMap, firstFrequencyMap);
 	}
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-//		String a = in.next();
-//		String b = in.next();
-		String a = "cde";
-		String b = "abc";
+		String a = in.next();
+		String b = in.next();
 		System.out.println(numberNeeded(a, b));
 
 	}
