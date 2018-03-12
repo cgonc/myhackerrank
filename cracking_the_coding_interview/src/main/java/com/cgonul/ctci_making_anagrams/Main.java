@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-	private static Map<Character, Integer> calculateFrequnencyMap(String aString) {
+	private static Map<Character, Integer> calculateFrequencyMap(String aString) {
 		Map<Character, Integer> result = new HashMap<>();
 		for(Character c : aString.toCharArray()){
 			if(result.containsKey(c)){
@@ -38,8 +38,8 @@ public class Main {
 	}
 
 	private static int numberNeeded(String first, String second) {
-		Map<Character, Integer> firstFrequencyMap = calculateFrequnencyMap(first);
-		Map<Character, Integer> secondFrequencyMap = calculateFrequnencyMap(second);
+		Map<Character, Integer> firstFrequencyMap = calculateFrequencyMap(first);
+		Map<Character, Integer> secondFrequencyMap = calculateFrequencyMap(second);
 		return getNumberOfDeletions(firstFrequencyMap, secondFrequencyMap) + getNumberOfDeletions(secondFrequencyMap, firstFrequencyMap);
 	}
 
